@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div class="container">
+        <button onclick="alert('Hello'); let a = 6; console.log(a)">Click me</button>  // this line is work
+    </div> -->
+
+    <div class="container" onmouseenter="console.log('mouse click hua')" onclick="console.log('container click hua')">  <!-- onmouseenter means mouse ke jane par tag par onmouseevent run ho jayega -->
+        <button>Click Me</button>
+
+
+        
+        
+    </div>
+    <script>
+        //  ************* this is the other way
+
+      let a =  document.getElementsByClassName("container")[0];
+      a.onclick=()=>{
+        a.innerHTML = "HEllo World";  // NOTE :- js mai likha code take 1st preference
+      }
+
+    </script>
+</body>
+</html>

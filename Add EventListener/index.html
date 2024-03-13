@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="btn">Click Me</button>
+
+    <script>
+        /* 
+        btn.addEventListener('click',function(e){
+             alert("Hellow World1");
+         })
+ 
+         btn.addEventListener('click',function(e){
+             alert("Hellow World2");
+            })
+            
+            let a = prompt("What is your favourite numer : ")
+            
+            if(a == '2'){
+                btn.removeEventListener('click',function(e){
+                 alert("Hello World1!")
+                })
+                
+            }
+            
+            // Note :- This Program will not remove EventListener but below program can remove the eventListener
+            
+            */
+
+
+
+
+        let x = function (e) {
+            // console.log(e)  // e ek event object hai
+            // console.log(e.target)  // e.target  wo wali value deta hai jisko event target karta hai
+            console.log(e.target, e.clientX, e.clientY)  // e.clientX and e.clientY deta hai interval button ke jis hisshe mai tumne click kiya hai
+            alert("Hellow World1");
+        }
+        
+        let y = function (e) {
+            console.log(e)  // e ek event object hai
+            alert("Hellow World2");
+        }
+
+        btn.addEventListener('click', x)
+        btn.addEventListener('click', y)
+
+        let a = prompt("What is your favourite numer : ")
+
+        if (a == '2') {
+            btn.removeEventListener('click', x)  // click par x wala eventListener Delete ho jayenga. 
+        }
+
+    </script>
+</body>
+
+</html>
