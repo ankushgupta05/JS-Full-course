@@ -1,0 +1,398 @@
+<!-- joks api taken from source link 'https://sv443.net/jokeapi/v2/#try-it' -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: rgb(202, 233, 222);
+        }
+
+        #joke {
+            background-color: rgb(236, 240, 244);
+            text-align: center;
+            margin: 20px;
+            margin: auto;
+            font-size: 30px;
+            border-radius: 12px;
+            width: 45%;
+            height: 300px;
+            justify-content: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 70px;
+            padding: 20px;
+            border-radius: 15px;
+            color: violet;
+
+        }
+        
+        .headder {
+            font-size: 40px;
+            padding-left: 40px;
+            text-align: center;
+            margin: 40px 40px 40px -88px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="headder">Jokes :- For Your Entertainment</div>
+        <div id="joke">This is a sample joke</div>
+    </div>
+
+
+
+    <script>
+
+        let myjokes = [
+            {
+                "category": "Programming",
+                "type": "single",
+                "joke": "Java is like Alzheimer's, it starts off slow, but eventually, your memory is gone.",
+                "flags": {
+                    "nsfw": false,
+                    "religious": false,
+                    "political": false,
+                    "racist": false,
+                    "sexist": false,
+                    "explicit": false
+                },
+                "id": 27,
+                "safe": false,
+                "lang": "en"
+            },
+            {
+                "category": "Programming",
+                "type": "single",
+                "joke": "Today I learned that changing random stuff until your program works is \"hacky\" and a \"bad coding practice\" but if you do it fast enough it's \"Machine Learning\" and pays 4x your current salary.",
+                "flags": {
+                    "nsfw": false,
+                    "religious": false,
+                    "political": false,
+                    "racist": false,
+                    "sexist": false,
+                    "explicit": false
+                },
+                "id": 33,
+                "safe": true,
+                "lang": "en"
+            },
+            {
+                "category": "Programming",
+                "type": "single",
+                "joke": "Knock knock.\nWho's there?\nRecursion.\nRecursion who?\nKnock knock.",
+                "flags": {
+                    "nsfw": false,
+                    "religious": false,
+                    "political": false,
+                    "racist": false,
+                    "sexist": false,
+                    "explicit": false
+                },
+                "id": 180,
+                "safe": true,
+                "lang": "en"
+            },
+            {
+                "category": "Programming",
+                "type": "single",
+                "joke": "// This line doesn't actually do anything, but the code stops working when I delete it.",
+                "flags": {
+                    "nsfw": false,
+                    "religious": false,
+                    "political": false,
+                    "racist": false,
+                    "sexist": false,
+                    "explicit": false
+                },
+                "id": 12,
+                "safe": true,
+                "lang": "en"
+            },
+            {
+                "category": "Programming",
+                "type": "single",
+                "joke": "A programmer puts two glasses on his bedside table before going to sleep.\nA full one, in case he gets thirsty, and an empty one, in case he doesn't.",
+                "flags": {
+                    "nsfw": false,
+                    "religious": false,
+                    "political": false,
+                    "racist": false,
+                    "sexist": false,
+                    "explicit": false
+                },
+                "id": 3,
+                "safe": true,
+                "lang": "en"
+            },
+            {
+                "category": "Programming",
+                "type": "single",
+                "joke": "ASCII silly question, get a silly ANSI.",
+                "flags": {
+                    "nsfw": false,
+                    "religious": false,
+                    "political": false,
+                    "racist": false,
+                    "sexist": false,
+                    "explicit": false
+                },
+                "id": 25,
+                "safe": true,
+                "lang": "en"
+            },
+            {
+                "category": "Programming",
+                "type": "single",
+                "joke": "Four engineers get into a car. The car won't start.\nThe Mechanical engineer says \"It's a broken starter\".\nThe Electrical engineer says \"Dead battery\".\nThe Chemical engineer says \"Impurities in the gasoline\".\nThe IT engineer says \"Hey guys, I have an idea: How about we all get out of the car and get back in\".",
+                "flags": {
+                    "nsfw": false,
+                    "religious": false,
+                    "political": false,
+                    "racist": false,
+                    "sexist": false,
+                    "explicit": false
+                },
+                "id": 132,
+                "safe": true,
+                "lang": "en"
+            },
+            {
+                "category": "Programming",
+                "type": "single",
+                "joke": "Your momma is so fat, you need to switch to NTFS to store a picture of her.",
+                "flags": {
+                    "nsfw": false,
+                    "religious": false,
+                    "political": false,
+                    "racist": false,
+                    "sexist": false,
+                    "explicit": true
+                },
+                "id": 55,
+                "safe": false,
+                "lang": "en"
+            },
+            {
+                "category": "Programming",
+                "type": "single",
+                "joke": "A byte walks into a bar looking miserable.\nThe bartender asks it: \"What's wrong buddy?\"\n\"Parity error.\" it replies. \n\"Ah that makes sense, I thought you looked a bit off.\"",
+                "flags": {
+                    "nsfw": false,
+                    "religious": false,
+                    "political": false,
+                    "racist": false,
+                    "sexist": false,
+                    "explicit": false
+                },
+                "id": 24,
+                "safe": true,
+                "lang": "en"
+            },
+            {
+                "category": "Programming",
+                "type": "single",
+                "joke": "Saying that Java is nice because it works on every OS is like saying that anal sex is nice because it works on every gender.",
+                "flags": {
+                    "nsfw": true,
+                    "religious": false,
+                    "political": false,
+                    "racist": false,
+                    "sexist": false,
+                    "explicit": true
+                },
+                "id": 30,
+                "safe": false,
+                "lang": "en"
+            },
+            {
+                "category": "Programming",
+                "type": "single",
+                "joke": "I've got a really good UDP joke to tell you but I don’t know if you'll get it.",
+                "flags": {
+                    "nsfw": false,
+                    "religious": false,
+                    "political": false,
+                    "racist": false,
+                    "sexist": false,
+                    "explicit": false
+                },
+                "id": 0,
+                "safe": true,
+                "lang": "en"
+            },
+            {
+                "category": "Dark",
+                "type": "single",
+                "joke": "My ex had an accident. I told the paramedics the wrong blood type for her. She'll finally experience what rejection is really like.",
+                "flags": {
+                    "nsfw": false,
+                    "religious": false,
+                    "political": false,
+                    "racist": false,
+                    "sexist": false,
+                    "explicit": false
+                },
+                "id": 152,
+                "safe": false,
+                "lang": "en"
+            },
+            {
+                "category": "Programming",
+                "type": "single",
+                "joke": "\"Can I tell you a TCP joke?\"\n\"Please tell me a TCP joke.\"\n\"OK, I'll tell you a TCP joke.\"",
+                "flags": {
+                    "nsfw": false,
+                    "religious": false,
+                    "political": false,
+                    "racist": false,
+                    "sexist": false,
+                    "explicit": false
+                },
+                "id": 57,
+                "safe": true,
+                "lang": "en"
+            },
+            {
+                "category": "Misc",
+                "type": "single",
+                "joke": "Never date a baker. They're too kneady.",
+                "flags": {
+                    "nsfw": false,
+                    "religious": false,
+                    "political": false,
+                    "racist": false,
+                    "sexist": false,
+                    "explicit": false
+                },
+                "safe": true,
+                "id": 271,
+                "lang": "en"
+            },
+            {
+                "category": "Misc",
+                "type": "single",
+                "joke": "What does the MacBook have in common with Donald Trump?\n\nI would tell you....\nBut I don't compare apples to oranges.",
+                "flags": {
+                    "nsfw": false,
+                    "religious": false,
+                    "political": true,
+                    "racist": false,
+                    "sexist": false,
+                    "explicit": false
+                },
+                "id": 233,
+                "safe": false,
+                "lang": "en"
+            },
+            {
+                "category": "Programming",
+                "type": "single",
+                "joke": "Java is like Alzheimer's, it starts off slow, but eventually, your memory is gone.",
+                "flags": {
+                    "nsfw": false,
+                    "religious": false,
+                    "political": false,
+                    "racist": false,
+                    "sexist": false,
+                    "explicit": false
+                },
+                "id": 27,
+                "safe": false,
+                "lang": "en"
+            },
+            {
+                "category": "Pun",
+                "type": "single",
+                "joke": "Two fish in a tank. One turns to the other and says, \"Do you know how to drive this thing?\"",
+                "flags": {
+                    "nsfw": false,
+                    "religious": false,
+                    "political": false,
+                    "racist": false,
+                    "sexist": false,
+                    "explicit": false
+                },
+                "id": 185,
+                "safe": true,
+                "lang": "en"
+            },
+            {
+                "category": "Programming",
+                "type": "single",
+                "joke": "Have a great weekend!\nI hope your code behaves the same on Monday as it did on Friday.",
+                "flags": {
+                    "nsfw": false,
+                    "religious": false,
+                    "political": false,
+                    "racist": false,
+                    "sexist": false,
+                    "explicit": false
+                },
+                "id": 44,
+                "safe": true,
+                "lang": "en"
+            },
+            {
+                "category": "Programming",
+                "type": "single",
+                "joke": "The glass is neither half-full nor half-empty, the glass is twice as big as it needs to be.",
+                "flags": {
+                    "nsfw": false,
+                    "religious": false,
+                    "political": false,
+                    "racist": false,
+                    "sexist": false,
+                    "explicit": false
+                },
+                "id": 23,
+                "safe": true,
+                "lang": "en"
+            },
+            {
+                "category": "Programming",
+                "type": "single",
+                "joke": "If Bill Gates had a dime for every time Windows crashed ... Oh wait, he does.",
+                "flags": {
+                    "nsfw": false,
+                    "religious": false,
+                    "political": false,
+                    "racist": false,
+                    "sexist": false,
+                    "explicit": false
+                },
+                "id": 22,
+                "safe": true,
+                "lang": "en"
+            }
+
+
+
+
+
+
+
+
+
+        ]
+
+
+        let index = Math.floor(Math.random() * myjokes.length - 1)
+        console.log(myjokes.length)
+        console.log(index)
+        joke.innerHTML = myjokes[index].joke
+
+    </script>
+</body>
+
+</html>
