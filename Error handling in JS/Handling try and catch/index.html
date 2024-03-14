@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+
+        /* 
+        
+                setTimeout(() => {
+                    console.log("print 1")
+                }, 1000);
+        
+                setTimeout(() => {
+                    console.log("print 2")
+                }, 2000);
+        
+                console.log(ankush)    // is line ke baad ek line bhi run nahi honga is liye error handling ko use karte hai.
+        
+                setTimeout(() => {
+                    console.log("print 3")
+                }, 3000);
+        
+                setTimeout(() => {
+                    console.log("print 4")
+                }, 4000);
+        
+        */
+
+
+
+
+        //  use error handling  
+
+        setTimeout(() => {
+            console.log("print 1")
+        }, 1000);
+
+        setTimeout(() => {
+            console.log("print 2")
+        }, 2000);
+
+        try{
+            console.log(ankush)    // is line mai error aayega lekin aage ki line bhi execute honga.
+        }
+        catch(error){
+            // console.log(error)
+            console.log("sorry error genrate!!")
+        }
+
+        setTimeout(() => {
+            console.log("print 3")
+        }, 3000);
+
+        setTimeout(() => {
+            console.log("print 4")
+        }, 4000);
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        let p1 = new Promise((resolve, reject) => {
+
+            console.log('Promise is pending')
+            setTimeout(() => {
+                // console.log("I am a promise and I am resolve");
+                resolve(true);
+
+            }, 5000)
+        })
+
+        let p2 = new Promise((resolve, reject) => {
+
+            console.log('Promise is pending')
+            setTimeout(() => {
+                // console.log("I am a promise and I am reject");
+                reject(new Error("I am an error"))
+
+            }, 5000)
+        })
+
+        // console.log(p1, p2);
+        p1.then((value)=>{
+            console.log(value)
+        })
+        p2.catch((error)=>{   
+            console.log('Some error occured in p2')  // error ko hum apne according show or likh sakte hai
+        })
+    </script>
+</body>
+
+</html>

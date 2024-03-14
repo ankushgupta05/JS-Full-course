@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        /*
+
+        // synchronus programing
+        let a = 12;
+        let b = 12;
+        let c = 12;
+        console.log(a+b+c);
+
+        */
+
+
+        /*
+        //Asynchronus programing
+        
+        console.log('starts')
+        setTimeout(function () {
+            console.log("Hey I am good")
+        }, 3000);
+        console.log('end');
+        */
+
+
+
+        /*
+
+        // this is also run
+
+        console.log('starts')
+        setTimeout(() => {
+            console.log("Hey I am good")
+            
+        }, 3000)
+        console.log('end');
+        */
+
+
+        /* 
+        
+                // callback function and below function add a script in a body
+        
+                function loadScript(src){
+                    let script = document.createElement('script')
+                    script.src = src;
+                    script.innerHTML = "this is a script which add in dynemin"
+                        document.body.append(script)
+                }
+        
+                loadScript('https://google.com')
+         */
+
+
+
+
+
+        /* 
+        
+                // callback function and below function add a script in a body with concept of onload dom
+       
+                function loadScript(src, callback){
+                   let script = document.createElement('script')
+                   script.src = src;
+                   script.onload =  function(){   
+                       console.log("function loaded with src  :  ",src )   // onload ek function hai jab script load ho jayenga to onload run ho jayenga
+                       callback(src);
+                   }
+                   document.body.appendChild(script)  // child likho ya na likho script append ho jayenga
+               }
+       
+       
+       
+               function hello(src){
+                   alert("Hello world!" + src);
+               }
+       
+               function goodmorning(src){
+                   alert("goodmorning" + src);
+               }
+       
+               loadScript('/', hello)   // url ke load hone ke baad hi hello() run honga aur agar url galat hai to kuch bhi run nahi honga
+       
+        */
+
+
+
+
+        // callback function and below function add a script in a body aur how to resolve error
+
+        function loadScript(src, callback) {
+            let script = document.createElement('script')
+            script.src = src;
+
+            script.onload = function () {
+                console.log("function loaded with src  :  ", src)
+                callback(null, src);  // agar error nahi hua to hello() ke error wale argument  ko null mil jayenha
+            }
+
+            script.onerror = function () {
+                console.log("Error Loading script with src : " + src)   // onerror bhi ek function hai agar error aaya to handle karenga
+                callback(new Error("Src got some error"));
+            }
+            document.body.appendChild(script)
+        }
+
+
+
+        function hello(error, src) {
+            if(error){
+                console.log(error)
+                return;
+            }
+            alert("Hello world!" + src);
+        }
+
+        function goodmorning(src) {
+            alert("goodmorning" + src);
+        }
+
+        loadScript('/asdasd', hello)   // url ke load nahi hua to error gerate honga than error ko resolve kare is tarah
+        // loadScript('/', hello)   // this line main script sahi hai to load honga to phir error genrate nahi honga
+
+
+    </script>
+</body>
+
+</html>

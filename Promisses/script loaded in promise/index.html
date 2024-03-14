@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+    let loadScript =(src)=>{
+        return new Promise((resolve, reject)=>{
+            let script = document.createElement('script');
+            script.type = 'text/javascript'
+            script.src = src;
+            document.body.appendChild(script)
+            script.onload = () =>{
+                resolve("script has been loaded")
+            }
+            script.onerror = ()=>{
+                reject(0)
+            }
+        })
+    }
+
+    let p1 = loadScript('/');
+    p1.then((value)=>{
+        console.log(value)
+        return loadScript('/');
+    }).then((value)=>{
+        // console.log(value)
+        console.log('second script ready')
+    }).catch((error)=>{
+        console.log('we are having problem on loading script')
+    })
+
+
+
+    // inme se koi ek bhi script load nahi hua to sabhi script run nahi karenge
+
+    </script>
+</body>
+</html>

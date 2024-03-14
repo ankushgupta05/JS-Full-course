@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        async function ankush() {
+
+            let delhiWeather = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("27 Deg")
+                }, 3000);
+            })
+            let bangalorWeather = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("21 Deg")
+                }, 6000);
+            })
+
+
+            // delhiWeather.then(alert)
+            // bangalorWeather.then(alert)
+
+            console.log("Fetching delhi weather ....")
+            let delhiW = await delhiWeather;
+            console.log("Fetched delhi weather = " + delhiW)
+
+            console.log("Fetching bangor weather weather ....")
+            let bangalorW = await bangalorWeather;
+            console.log("bangalorW delhi weather = " + bangalorW)
+
+            return [delhiW, bangalorW]
+
+
+        }
+
+
+        const gupta = async () => {
+            console.log("Hey I am gupta And I am  Waitting");
+        }
+
+        const main1 = async () => {
+            console.log('wellcome to weather control room');
+
+            let a = await ankush();  // pahale pura ankush() run honga
+            let b = await gupta();  // phir gupta() run honga
+            // a.then((value) => {     // a main ab pura value aa jayenga  is liye ye line run karenga
+            //     console.log(value)
+            // })
+        }
+
+        main1();
+    </script>
+</body>
+
+</html>
