@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        /*
+        // this code genrate error bcz async function should be required.
+                let a = () => {
+                 return   new Promise((resolve, reject) => {
+                   setTimeout(() => {
+                      resolve(456)
+                    }, 2000)
+                })
+            }
+        
+                let b = await a();
+                console.log(b)
+                
+                let c = await a();
+                console.log(c)
+
+                let d = await a();
+                console.log(d)
+                
+                */
+
+
+
+        /*
+        // without using IIFE function
+let a = () => {
+
+   return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(456)
+        }, 2000)
+    })
+}
+let f = async () => {
+
+    let b = await a();
+    console.log(b)
+
+    let c = await a();
+    console.log(c)
+
+    let d = await a();
+    console.log(d)
+}
+
+f()
+
+        */
+
+
+
+
+        //  using IIFE function
+
+        let a = () => {
+
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(456)
+                }, 2000)
+            })
+        }
+
+        // note :- iske andar jo variable declare hai wo variable bus is block tak hi simit hai
+        (async () => {
+
+            let b = await a();
+            console.log(b)
+
+            let c = await a();
+            console.log(c)
+
+            let d = await a();
+            console.log(d)
+        })()
+
+
+
+
+    </script>
+</body>
+
+</html>

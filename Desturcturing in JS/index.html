@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // Destructuring
+
+        /*
+        //  method 1st 
+        
+            let arr = [3, 4, 5, 6, 7, 8, 9]
+            let [a, b, c] = arr
+            console.log(a,b,c)  //  output a = 3, b = 4, c = 5 
+            */
+
+        /*
+        // methos 2nd 
+        
+       let arr = [3, 4, 5, 6, 7, 8, 9]
+       let [a, b, c , ...rest] = arr
+       console.log(a, b, c, rest)  //  output a = 3, b = 4, c = 5 and rest mai baki array value assign ho jayenga
+
+        */
+
+        /*
+        
+               let arr = [3, 4, 5, 6, 7, 8, 9]
+               let [a, , b ,  , ...rest] = arr  // yaha par value 4 aur 6 kisi ko assign nahi hua hai
+               console.log(a, b, rest)  //  output a = 3, b = 5 and rest mai baki array value assign ho jayenga 
+        */
+
+
+
+        /*
+        // this is other method
+        
+        let {a,b} = {a:5 ,  b:10}  // value assign in other way
+        console.log(a,b)  // a = 5, b = 10
+        
+         */
+
+
+
+        // speread operator
+
+        /*
+        let arr1 = [11,23,12,4,1234,123]
+        let obj1 = { ...arr1}   // it convert an object
+        console.log(obj1)   //output {0: 11, 1: 23, 2: 12, 3: 4, 4: 1234, 5: 123}
+        */
+
+        
+
+        /* 
+
+        function sum(v1, v2, v3){
+            return (v1 + v2 + v3)
+        }
+
+        let arr1 = [12,12,10]
+        console.log(sum(...arr1))  // output 34
+
+        */
+
+        let obj2 = {
+            name:"ankush",
+            company:"google",
+            address:"GN"
+        }
+        console.log({...obj2, name:"gupta"})
+
+    </script>
+</body>
+
+</html>
