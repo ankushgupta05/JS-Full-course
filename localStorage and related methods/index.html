@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let key = prompt("enter key to set in localStorage : ")
+        let value = prompt("enter value to set in localStorage : ")
+        localStorage.setItem(key,value)   // setItem set value in localStorage 
+
+        console.log(`the value at ${key} is ${localStorage.getItem(key)}`)  // getItem display value in localStorage
+
+
+        if(key =='red' || key == 'blue'){
+            localStorage.removeItem(key)  // removeItem remove key in localStorage
+        }
+        
+        if( key == 0){
+            localStorage.clear(key)  // removeItem remove key in localStorage
+        }
+
+
+        console.log(localStorage.length)  // it give lenght of store key in localstorage 
+
+
+
+
+        /* 
+        
+        NOTE :- localStorage mai key aur value dono string ke form mai data store hota hai chahe app integer number do as a key localstorage convert kar deta hai ek string mai.
+        
+        */
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        /*
+        //  without async function
+        
+        
+                let option = {
+                    method: "POST",
+                    headers: {
+                        "Content-type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        title: 'ankush',
+                        body: 'gupta',
+                        userId: 100000,
+                    }),
+                }
+        
+        
+                fetch('https://jsonplaceholder.typicode.com/posts', option)
+                    .then((response) => response.json())
+                    .then((json) => console.log(json))
+        
+        */
+
+
+
+        /*
+        // using async function 
+
+        const createTodo = async () => {
+
+
+            let option = {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify({
+                    title: 'ankush',
+                    body: 'gupta',
+                    userId: 100000,
+                }),
+            }
+
+            let p = await fetch('https://jsonplaceholder.typicode.com/posts', option)
+            let response = await p.json();
+            return response;
+        }
+
+        const mainFun = async () => {
+            let todo = await createTodo();
+            console.log(todo)
+        }
+
+        mainFun();
+
+        */
+
+
+        /*
+        //  using async function but it taking argument
+
+        const createTodo = async (todo) => {
+
+
+            let option = {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify(todo),
+            }
+
+            let p = await fetch('https://jsonplaceholder.typicode.com/posts', option)
+            let response = await p.json();
+            return response;
+        }
+
+        const mainFun = async () => {
+            let todo = {
+                title: 'ankush',
+                body: 'gupta',
+                userId: 100000,
+            }
+            let todor = await createTodo(todo);
+            console.log(todor)
+        }
+
+        mainFun();
+
+        */
+
+
+
+        const createTodo = async (todo) => {
+
+
+            let option = {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify(todo),
+            }
+
+            let p = await fetch('https://jsonplaceholder.typicode.com/posts', option)
+            let response = await p.json();
+            return response;
+        }
+
+        const getTodo = async (id) => {
+            let response = await fetch('https://jsonplaceholder.typicode.com/posts/' + id);
+            let r = await response.json();
+            return r;
+
+        }
+
+
+        const mainFun = async () => {
+            let todo = {
+                title: 'ankush',
+                body: 'gupta',
+                userId: 100000,
+            }
+            let todor = await createTodo(todo);
+            console.log(todor)
+            console.log(await getTodo(5))
+        }
+
+        mainFun();
+
+
+
+    </script>
+</body>
+
+</html>

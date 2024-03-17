@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+</head>
+<body>
+    
+    <script>
+        
+        let p = fetch('') // give api to fetch
+        p.then((value1)=>{
+            console.log(value1.status)  // status dega as a number
+            console.log(value1.ok)  // true dega agar data fetch ho jayenga
+            return value1.json()  // read data 
+        }).then((value2)=>{
+            console.log(value2)  // display data in consol screen
+        })
+    </script>
+</body>
+</html>
+
+
+<!-- NOTE ye code se data ko fetch kar pate hai -->
